@@ -1,7 +1,7 @@
 import TourismChart from '@/components/TourismChart';
 
 async function getData() {
-  const res = await fetch('http://backend:8080/data', { cache: 'no-store' });
+  const res = await fetch('http://backend:8081/data', { cache: 'no-store' });
   
   if (!res.ok) {
     throw new Error('Failed to fetch data');
