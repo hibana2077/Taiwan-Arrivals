@@ -4,4 +4,4 @@ uvicorn
 redis
 requests
 beautifulsoup4
-pandas
+pandas==2.2.0
