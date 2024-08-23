@@ -6,6 +6,7 @@ import os
 import time
 import uvicorn
 import requests
+from bs4 import BeautifulSoup
 from fastapi.middleware.cors import CORSMiddleware
 
 redis_server = os.getenv("REDIS_SERVER", "localhost")
