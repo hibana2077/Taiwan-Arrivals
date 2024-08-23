@@ -1,0 +1,26 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      HOST: "0.0.0.0"
+      REDIS_SERVER: "db"
+      REDIS_PORT: 6379
+    ports:
+      - "8081:8081"
+    networks:
+      - weather_dashboard_network
+
+  frontend:
+    build:
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    networks:
+      - weather_dashboard_network
+
+networks:
+  weather_dashboard_network:
+    driver: bridge
