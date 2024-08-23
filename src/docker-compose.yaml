@@ -10,17 +10,17 @@ services:
     ports:
       - "8081:8081"
     networks:
-      - weather_dashboard_network
+      - taiwan_arrivals_network
 
-  frontend:
+  web:
     build:
       context: ./web
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
     networks:
-      - weather_dashboard_network
+      - taiwan_arrivals_network
 
 networks:
-  weather_dashboard_network:
+  taiwan_arrivals_network:
     driver: bridge
