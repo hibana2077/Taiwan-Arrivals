@@ -20,20 +20,24 @@ export default async function Page() {
     family: jsonData['總計探親'][key],
   }));
 
+  const formatNumber = (number) => {
+    return `${(number / 1000).toFixed(1)}K`;
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-400 via-pink-500 to-red-500 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-gray-700 flex items-center justify-center p-4">
       <div className="w-full max-w-4xl">
-        <div className="backdrop-blur-lg bg-white bg-opacity-20 rounded-xl shadow-lg p-6 border border-white border-opacity-30">
-          <h1 className="text-3xl font-bold mb-6 text-white text-center">Tourism Data Visualization</h1>
-          <div className="bg-white bg-opacity-30 rounded-lg p-4 mb-6">
+        <div className="backdrop-blur-lg bg-black bg-opacity-30 rounded-xl shadow-lg p-6 border border-gray-700">
+          <h1 className="text-3xl font-bold mb-6 text-gray-100 text-center">Tourism Data Visualization</h1>
+          <div className="bg-gray-800 bg-opacity-50 rounded-lg p-4 mb-6">
             <TourismChart data={formattedData} />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {['Tourism', 'Business', 'Family'].map((category) => (
-              <div key={category} className="bg-white bg-opacity-30 rounded-lg p-4 text-center">
-                <h2 className="text-xl font-semibold text-white mb-2">{category}</h2>
-                <p className="text-white text-opacity-80">
-                  {formattedData[formattedData.length - 1][category.toLowerCase()].toLocaleString()} visitors
+              <div key={category} className="bg-gray-800 bg-opacity-50 rounded-lg p-4 text-center">
+                <h2 className="text-xl font-semibold text-gray-100 mb-2">{category}</h2>
+                <p className="text-gray-300">
+                  {formatNumber(formattedData[formattedData.length - 1][category.toLowerCase()])} visitors
                 </p>
               </div>
             ))}
