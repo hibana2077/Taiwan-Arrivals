@@ -4,3 +4,4 @@ uvicorn
 redis
 requests
 beautifulsoup4
+pandas
