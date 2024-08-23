@@ -14,4 +14,27 @@ A small project to display the number of visitors to Taiwan and their purpose.
 ### Git Clone
 
 ```bash
-git clone 
+git clone https://github.com/hibana2077/Taiwan-Arrivals.git
+```
+
+### Start
+
+```bash
+cd Taiwan-Arrivals
+cd src
+docker compose up -d --build
+```
+
+### Stop
+
+```bash
+docker compose down
+```
+
+### Access
+
+- [http://localhost:8080](http://localhost:8080)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
